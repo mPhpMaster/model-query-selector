@@ -30,6 +30,22 @@ The package will automatically register its service provider.
 
 ## Usage
 
+### Helper Function
+
+You can use the `mqs` helper function to create an instance of `ModelQuerySelector`:
+
+```php
+use MPhpMaster\ModelQuerySelector\ModelQuerySelector;
+
+// Usage example
+$querySelector = mqs(User::class, 'u');
+dump($querySelector); // Outputs: "users as u"
+```
+
+### Manual Instantiation
+
+You can also manually instantiate `ModelQuerySelector` as follows:
+
 ```php
 use MPhpMaster\ModelQuerySelector\ModelQuerySelector;
 use App\Models\User;

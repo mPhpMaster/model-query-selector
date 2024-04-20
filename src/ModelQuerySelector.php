@@ -2,8 +2,7 @@
 
 namespace MPhpMaster\ModelQuerySelector;
 
-use App\Traits\TExtraModelUtils;
-use App\Traits\TMakeable;
+use MPhpMaster\ModelQuerySelector\TMakeable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Stringable;
 
@@ -15,7 +14,7 @@ use Illuminate\Support\Stringable;
  * @method static ModelQuerySelector qc(string $columns, string|Model|TExtraModelUtils|null $class_or_table = null)
  *
  * @method ModelQuerySelector qc(array|string $columns, string|Model|TExtraModelUtils|null $class_or_table = null, ?string $alias = null)
- * @method ModelQuerySelector table(string|Model|\App\Traits\TExtraModelUtils $class, ?string $alias = null)
+ * @method ModelQuerySelector table(string|\Illuminate\Database\Eloquent\Model $class, ?string $alias = null)
  */
 class ModelQuerySelector extends Stringable
 {
@@ -201,7 +200,7 @@ class ModelQuerySelector extends Stringable
 			$parameters[] = $this->alias;
 		}
 
-		/** @var \App\Traits\TExtraModelUtils $c */
+		/** @var \Illuminate\Database\Eloquent\Model $c */
 		[ $columns, $alias ] = $parameters;
 		if(is_array($columns)) {
 			$is_associative = count(array_filter(array_keys($columns), 'is_string')) > 0;
