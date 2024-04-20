@@ -37,7 +37,7 @@ class ModelQuerySelectorServiceProvider extends ServiceProvider
         /**
          * Helpers
          */
-        require_once __DIR__ . '/../Helpers/FHelpers.php';
+        require_once __DIR__ . '/Helpers/FHelpers.php';
     }
 
     /**
