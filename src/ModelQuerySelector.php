@@ -260,8 +260,9 @@ class ModelQuerySelector extends Stringable
 
 		}
 		$result = starts_with($result, '.') ? substr($result, 1) : $result;
-		$this->value = $result;
-		return $this;
+		$self = clone $this;
+		$self->value = $result;
+		return $self;
 	}
 
 	public function toString(): string
