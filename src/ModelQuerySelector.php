@@ -263,4 +263,9 @@ class ModelQuerySelector extends Stringable
 		$this->value = $result;
 		return $this;
 	}
+
+	public function toString(): string
+	{
+		return trim($this->value);
+	}
 }

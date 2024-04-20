@@ -69,6 +69,17 @@ $querySelector->qc(['column1', 'column2'], 'alias');
 dump($querySelector); // Outputs: "alias.column1, alias.column2"
 ```
 
+### `toString` Method
+
+The `toString` method returns the string representation of the `ModelQuerySelector` instance:
+
+```php
+use MPhpMaster\ModelQuerySelector\ModelQuerySelector;
+
+$querySelector = mqs(User::class, 'u');
+echo $querySelector->toString(); // Outputs: "users as u". same as: `echo trim($querySelector);`
+```
+
 ## License
 
 The Laravel ModelQuerySelector package is open-source software licensed under
